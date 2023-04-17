@@ -17,14 +17,14 @@ public interface IArticulosService {
 	
 	//Metodos del CRUD
 	//Metodos del CRUD
-	public List<Articulos> listarFabricantes();//Listar todos
+	public List<Articulos> listarArticulos();//Listar todos
 	
-	public Articulos guardarFabricantes(Articulos articulo); //Guardar un articulo CREATE
+	public Articulos guardarArticulos(Articulos articulo); //Guardar un articulo CREATE
 	
-	public Articulos fabricanteXID(int id); //Leer datos de un articulo READ
+	public Articulos articuloXID(int id); //Leer datos de un articulo READ
 	
-	public Articulos actualizarFabricante(Articulos articulo); //Actualiza un articulo UPDATE
+	public Articulos actualizarArticulo(Articulos articulo); //Actualiza un articulo UPDATE
 	
-	public void eliminarFabricante(int id); //Elimina el articulo DELETE
+	public void eliminarArticulo(int id); //Elimina el articulo DELETE
 
 }
