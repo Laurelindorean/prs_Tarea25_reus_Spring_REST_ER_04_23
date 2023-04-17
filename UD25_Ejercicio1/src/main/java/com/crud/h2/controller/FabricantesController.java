@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.crud.h2.dto.Fabricantes;
-import com.crud.h2.service.FabricantesServiceImp;
+import com.crud.h2.service.IFabricantesService;
 
 /**
  * @author Palmira
@@ -27,7 +27,7 @@ import com.crud.h2.service.FabricantesServiceImp;
 public class FabricantesController {
 	
 	@Autowired
-	FabricantesServiceImp fabricanteServiceImp;
+	IFabricantesService fabricanteServiceImp;
 	
 	@GetMapping("/fabricantes")
 	public List<Fabricantes> listarFabricantes(){

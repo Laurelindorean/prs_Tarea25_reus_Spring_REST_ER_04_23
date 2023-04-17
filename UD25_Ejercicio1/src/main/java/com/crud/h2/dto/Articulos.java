@@ -18,37 +18,24 @@ import jakarta.persistence.Table;
  */
 @Entity
 @Table(name = "articulos")
-public class Articulos {
+public class Articulos{
+
 
 	// Atributos de entidad Articulos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int codigo;
-	@Column
+	@Column(name="nombre")
 	private String nombre;
-	@Column
+	@Column(name="precio")
 	private int precio;
-
 	@ManyToOne
-	@JoinColumn(name = "fk_fabricante")
+	@JoinColumn(name = "fabricante_id", nullable=false)
 	private Fabricantes fabricante;
 
 	// Constructores
 	public Articulos() {
 
-	}
-
-	/**
-	 * @param codigo
-	 * @param nombre
-	 * @param precio
-	 * @param fabricante
-	 */
-	public Articulos(int codigo, String nombre, int precio, Fabricantes fabricante) {
-		this.codigo = codigo;
-		this.nombre = nombre;
-		this.precio = precio;
-		this.fabricante = fabricante;
 	}
 
 	/**
@@ -106,13 +93,4 @@ public class Articulos {
 	public void setFabricante(Fabricantes fabricante) {
 		this.fabricante = fabricante;
 	}
-
-	@Override
-	public String toString() {
-		return "Articulos [codigo=" + codigo + ", nombre=" + nombre + ", precio=" + precio + ", fabricante="
-				+ fabricante + "]";
-	}
-	
-	
-
 }

@@ -15,7 +15,7 @@ import com.crud.h2.dto.Articulos;
  */
 public interface IArticulosService {
 	
-	//Metodos del CRUD
+
 	//Metodos del CRUD
 	public List<Articulos> listarArticulos();//Listar todos
 	

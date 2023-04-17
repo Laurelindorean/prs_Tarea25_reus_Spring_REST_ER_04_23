@@ -20,30 +20,30 @@ public class FabricantesServiceImp implements IFabricantesService{
 
 	//Utilizamos los metodos de la interface IFabricantesDao, es como si la instanciaramos
 	@Autowired
-	IFabricantesDAO iFabricanteDao;
+	IFabricantesDAO fabricanteDao;
 	@Override
 	public List<Fabricantes> listarFabricantes() {	
-		return iFabricanteDao.findAll();
+		return fabricanteDao.findAll();
 	}
 
 	@Override
 	public Fabricantes guardarFabricantes(Fabricantes fabricante) {		
-		return iFabricanteDao.save(fabricante);
+		return fabricanteDao.save(fabricante);
 	}
 
 	@Override
 	public Fabricantes fabricanteXID(int id) {
-		return iFabricanteDao.findById(id).get();
+		return fabricanteDao.findById(id).get();
 	}
 
 	@Override
 	public Fabricantes actualizarFabricante(Fabricantes fabricante) {
-		return iFabricanteDao.save(fabricante);
+		return fabricanteDao.save(fabricante);
 	}
 
 	@Override
 	public void eliminarFabricante(int id) {
-		iFabricanteDao.deleteById(id);;
+		fabricanteDao.deleteById(id);;
 		
 	}
 

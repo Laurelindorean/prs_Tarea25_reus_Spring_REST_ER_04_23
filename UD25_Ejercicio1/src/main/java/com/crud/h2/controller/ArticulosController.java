@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.crud.h2.dto.Articulos;
-import com.crud.h2.service.ArticulosServiceImp;
+import com.crud.h2.service.IArticulosService;
 
 /**
  * @author Palmira
@@ -27,7 +27,7 @@ import com.crud.h2.service.ArticulosServiceImp;
 public class ArticulosController {
 	
 	@Autowired
-	ArticulosServiceImp articuloServicImp;
+	private IArticulosService articuloServicImp;
 	
 	@GetMapping("/articulos")
 	public List<Articulos> listarArticulos(){
@@ -44,7 +44,7 @@ public class ArticulosController {
 		Articulos articulo_xid = new Articulos();
 		articulo_xid = articuloServicImp.articuloXID(codigo);
 		return articulo_xid;
-	}
+	}	
 	
 	@PutMapping("/articulos/{codigo}")
 	public Articulos actualizarArticulo(@PathVariable(name="codigo") int codigo, @RequestBody Articulos articulo) {
