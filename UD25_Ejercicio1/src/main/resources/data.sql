@@ -1,18 +1,20 @@
 DROP TABLE IF EXISTS fabricantes;
 DROP TABLE IF EXISTS articulos;
+
 CREATE TABLE fabricantes (
-codigo INT AUTO_INCREMENT,
-nombre VARCHAR(100),
+codigo INT NOT NULL AUTO_INCREMENT,
+nombre VARCHAR(100) NULL,
 PRIMARY KEY(codigo)
 );
 
 CREATE TABLE articulos(
-codigo INT AUTO_INCREMENT,
-nombre VARCHAR(100),
-precio INT, 
-fk_fabricante INT, 
+codigo INT NOT NULL AUTO_INCREMENT,
+nombre VARCHAR(100) NULL,
+precio INT NULL , 
+fk_fabricante INT  NULL, 
 PRIMARY KEY(codigo), 
-CONSTRAINT fk_fabricante FOREIGN KEY(fk_fabricante) REFERENCES fabricantes (codigo)
+FOREIGN KEY(fk_fabricante) REFERENCES fabricantes(codigo)
+ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 INSERT INTO fabricantes (nombre) VALUES ('Nvidia');

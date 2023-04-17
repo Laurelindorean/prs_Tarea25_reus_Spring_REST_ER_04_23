@@ -30,7 +30,6 @@ public class Fabricantes {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int codigo;
-	@Column
 	private String nombre;
 
 	@OneToMany
