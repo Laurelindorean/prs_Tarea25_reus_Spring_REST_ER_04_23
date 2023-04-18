@@ -18,19 +18,18 @@ import jakarta.persistence.Table;
  */
 @Entity
 @Table(name = "articulos")
-public class Articulos{
-
+public class Articulos {
 
 	// Atributos de entidad Articulos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int codigo;
-	@Column(name="nombre")
+	@Column(name = "nombre")
 	private String nombre;
-	@Column(name="precio")
+	@Column(name = "precio")
 	private int precio;
 	@ManyToOne
-	@JoinColumn(name = "fabricante_id", nullable=false)
+	@JoinColumn(name = "fabricante_id", nullable = false)
 	private Fabricantes fabricante;
 
 	// Constructores
